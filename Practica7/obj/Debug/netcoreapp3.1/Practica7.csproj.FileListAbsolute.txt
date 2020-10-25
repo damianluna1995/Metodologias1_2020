@@ -1,0 +1,13 @@
+C:\Users\usuario\Desktop\MDP1\Practica7\bin\Debug\netcoreapp3.1\Practica7.exe
+C:\Users\usuario\Desktop\MDP1\Practica7\bin\Debug\netcoreapp3.1\Practica7.deps.json
+C:\Users\usuario\Desktop\MDP1\Practica7\bin\Debug\netcoreapp3.1\Practica7.runtimeconfig.json
+C:\Users\usuario\Desktop\MDP1\Practica7\bin\Debug\netcoreapp3.1\Practica7.runtimeconfig.dev.json
+C:\Users\usuario\Desktop\MDP1\Practica7\bin\Debug\netcoreapp3.1\Practica7.dll
+C:\Users\usuario\Desktop\MDP1\Practica7\bin\Debug\netcoreapp3.1\Practica7.pdb
+C:\Users\usuario\Desktop\MDP1\Practica7\obj\Debug\netcoreapp3.1\Practica7.csprojAssemblyReference.cache
+C:\Users\usuario\Desktop\MDP1\Practica7\obj\Debug\netcoreapp3.1\Practica7.AssemblyInfoInputs.cache
+C:\Users\usuario\Desktop\MDP1\Practica7\obj\Debug\netcoreapp3.1\Practica7.AssemblyInfo.cs
+C:\Users\usuario\Desktop\MDP1\Practica7\obj\Debug\netcoreapp3.1\Practica7.csproj.CoreCompileInputs.cache
+C:\Users\usuario\Desktop\MDP1\Practica7\obj\Debug\netcoreapp3.1\Practica7.dll
+C:\Users\usuario\Desktop\MDP1\Practica7\obj\Debug\netcoreapp3.1\Practica7.pdb
+C:\Users\usuario\Desktop\MDP1\Practica7\obj\Debug\netcoreapp3.1\Practica7.genruntimeconfig.cache
