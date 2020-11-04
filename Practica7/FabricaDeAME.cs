@@ -4,8 +4,11 @@ namespace Practica7
 {
     public class FabricaDeAME: FabricaDeComparables
     {
-        Manejador responsable;
 
+        public FabricaDeAME(Manejador responsable){
+            base.responsable = responsable;
+        }
+        
         public override IComparable crearComparable(){
             
             //Crea un Alumno desde archivo
@@ -19,13 +22,6 @@ namespace Practica7
         }
 
         public override IComparable crearAleatorio(){
-            
-            /*GeneradorDeDatosAleatorios gdda = new GeneradorDeDatosAleatorios();
-            string nombre = gdda.stringAleatorio(5);
-            int dni = gdda.numeroAleatorio(100);
-            int legajo = gdda.numeroAleatorio(200);
-            double promedio = gdda.numeroAleatorio(10);
-            return new AlumnoMuyEstudioso(nombre,dni,legajo,promedio);*/
 
             string nombre = responsable.stringAleatorio(5);
             int dni = responsable.numeroAleatorio(1000);
@@ -37,13 +33,6 @@ namespace Practica7
         }
 
         public override IComparable crearPorTeclado(){
-            
-            /*LectorDeDatos ldd = new LectorDeDatos();
-            string nombre = ldd.stringPorTeclado();
-            int dni = ldd.numeroPorTeclado();
-            int legajo = ldd.numeroPorTeclado();
-            double promedio = ldd.doublePorTeclado();
-            return new AlumnoMuyEstudioso(nombre,dni,legajo,promedio);*/
 
             string nombre = responsable.stringPorTeclado();
             int dni = responsable.numeroPorTeclado();

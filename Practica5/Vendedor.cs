@@ -3,10 +3,11 @@ using System.Collections.Generic;
 
 namespace Practica5
 {
-    class Vendedor: Persona, IObservado
+   	class Vendedor: Persona, IObservado
     {
         private int sueldoBasico;
         private double bonus;
+	    private int monto;
         List<IObservador> observadores = new List<IObservador>();
 
         public Vendedor(string n, int d, int s): base(n,d){
@@ -14,29 +15,36 @@ namespace Practica5
             bonus = 1;
         }
 
-        public double Venta(int monto){
-            //Console.WriteLine(monto);
-            this.Notificar();
-            return monto; 
+        public void Venta(int monto){
+		    this.monto = monto;		
+            this.Notificar(); 
         }
 
         public void aumentaBonus(){
             bonus *= 1.10;
         }
-
-        public int getSueldoBasico(){
+	
+	    public int getSueldoBasico(){
             return this.sueldoBasico;
         }
 
+        public int getMonto(){
+            return this.monto;
+        }
+        
         public double getBonus(){
             return this.bonus;
         }
 
-        public void setSueldoBAsico(int sueldo){
-            this.sueldoBasico = sueldo;    
+        public void setSueldoBasico(int sueldo){
+            this.sueldoBasico = sueldo;
         }
-        
-        public void setBonus(double bonus){
+
+        public void setMonto(int monto){
+            this.monto = monto;
+        }
+
+        public void setBonus(int bonus){
             this.bonus = bonus;
         }
         
@@ -72,10 +80,9 @@ namespace Practica5
         }
         
         public void Agregar(IObservador observador){
-        	foreach(IObservador obser in observadores)
-        		observadores.Add(obser);
-        }
+        	observadores.Add(observador);
+        } 
 
     }
-
+    
 }

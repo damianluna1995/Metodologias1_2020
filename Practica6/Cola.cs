@@ -41,14 +41,15 @@ namespace Practica6
             return mayor;
         }
         public void Agregar(IComparable comparable){
-            if(cola.Count == 0)
+
+            cola.Add(comparable);
+            
+            if(cola.Count == 1)
                 if(ordenInicio != null)
                     ordenInicio.Ejecutar();
             
             if (ordenLlegaAlumno != null)
                 ordenLlegaAlumno.Ejecutar(comparable);
-
-            cola.Add(comparable);
 
             if (cola.Count == 40)
                 if(ordenAulaLlena != null)

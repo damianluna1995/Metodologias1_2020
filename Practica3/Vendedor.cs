@@ -7,6 +7,7 @@ namespace Practica3
     {
         private int sueldoBasico;
         private double bonus;
+        private int monto;
         List<IObservador> observadores = new List<IObservador>();
 
         public Vendedor(string n, int d, int s): base(n,d){
@@ -14,10 +15,9 @@ namespace Practica3
             bonus = 1;
         }
 
-        public double Venta(int monto){
-            //Console.WriteLine(monto);
-            this.Notificar();
-            return monto; 
+        public void Venta(int monto){
+            this.monto = monto;
+            this.Notificar(); 
         }
 
         public void aumentaBonus(){
@@ -27,6 +27,10 @@ namespace Practica3
         public int getSueldoBasico(){
             return this.sueldoBasico;
         }
+
+        public int getMonto(){
+            return this.monto;
+        }
         
         public double getBonus(){
             return this.bonus;
@@ -34,6 +38,10 @@ namespace Practica3
 
         public void setSueldoBasico(int sueldo){
             this.sueldoBasico = sueldo;
+        }
+
+        public void setMonto(int monto){
+            this.monto = monto;
         }
 
         public void setBonus(int bonus){
@@ -72,8 +80,7 @@ namespace Practica3
         }
         
         public void Agregar(IObservador observador){
-        	foreach(IObservador obser in observadores)
-        		observadores.Add(obser);
+        	observadores.Add(observador);
         }
 
     }

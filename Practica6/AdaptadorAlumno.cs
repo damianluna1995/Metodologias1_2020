@@ -5,9 +5,9 @@ namespace Practica6
 	
 	public class AdaptadorAlumno: Student
 	{
-		Alumno alumno;
+		IAlumno alumno;
 		
-		public AdaptadorAlumno(Alumno a){
+		public AdaptadorAlumno(IAlumno a){
 			this.alumno = a;
 		}
 		
@@ -41,42 +41,4 @@ namespace Practica6
 		
 	}
 
-	public class AdaptadorAME: Student
-	{
-		AlumnoMuyEstudioso ame;
-		
-		public AdaptadorAME(AlumnoMuyEstudioso a){
-			this.ame = a;
-		}
-		
-		public string getName(){
-			return ame.getNombre();
-		}
-		
-		public int yourAnswerIs(int question){
-			return ame.responderPregunta(question);
-		}
-		
-		public void setScore(int score){
-			ame.setCalificacion(score);
-		}
-		
-		public string showResult(){
-			return ame.mostrarCalificacion();
-		}
-		
-		public bool equals(Student student){
-			return ame.SosIgual(((AdaptadorAME)student).ame);
-		}
-		
-		public bool lessThan(Student student){
-			return ame.SosMenor(((AdaptadorAME)student).ame);
-		}
-		
-		public bool greaterThan(Student student){
-			return ame.SosMayor(((AdaptadorAME)student).ame);
-		}
-
-	}
-	
 }

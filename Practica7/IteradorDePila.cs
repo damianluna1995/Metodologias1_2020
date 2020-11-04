@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Practica7
 {
-    class IteradorDePila : Iterador
+    public class IteradorDePila : Iterador
     {
         List<IComparable> elementos;
         int indice = 0;

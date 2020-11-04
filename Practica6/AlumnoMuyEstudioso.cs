@@ -7,7 +7,7 @@ namespace Practica6
 	{
 		public AlumnoMuyEstudioso(string n, int d, int l, double p): base(n,d,l,p){}
 		
-		public new int responderPregunta(int pregunta){
+		public override int responderPregunta(int pregunta){
 			return pregunta % 3;
 		}
 

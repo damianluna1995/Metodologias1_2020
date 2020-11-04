@@ -24,7 +24,7 @@ namespace Practica4
         }
 
         public IComparable actual(){
-            return elementos.getConjunto()[indice];
+            return ((ClaveValor)elementos.getConjunto()[indice]).getVal();
         }
 
     }

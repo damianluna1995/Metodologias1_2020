@@ -2,7 +2,7 @@ using System;
 
 namespace Practica7
 {
-    class Aula
+    public class Aula
     {
         Teacher teacher;
 

@@ -44,7 +44,7 @@ namespace Practica5
             
             pila.Add(comparable);
 
-            if(pila.Count == 0)
+            if(pila.Count == 1)
                 if(ordenInicio != null)
                     ordenInicio.Ejecutar();
             

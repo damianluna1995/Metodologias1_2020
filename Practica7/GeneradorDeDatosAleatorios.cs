@@ -2,12 +2,11 @@ using System;
 
 namespace Practica7
 {
-    class GeneradorDeDatosAleatorios: Manejador
+    public class GeneradorDeDatosAleatorios: Manejador
     {
         private static GeneradorDeDatosAleatorios lector = null;
 
-        public GeneradorDeDatosAleatorios(Manejador siguiente): base(siguiente){}
-        private GeneradorDeDatosAleatorios(){}
+        private GeneradorDeDatosAleatorios(Manejador siguiente): base(siguiente){ }
 
         override public int numeroAleatorio(int rangoMaximo)
         {
@@ -34,9 +33,9 @@ namespace Practica7
 
         }
 
-        public static GeneradorDeDatosAleatorios getInstance(){
+        public static GeneradorDeDatosAleatorios getInstance(Manejador responsable){
             if(lector == null)
-                lector = new GeneradorDeDatosAleatorios();
+                lector = new GeneradorDeDatosAleatorios(responsable);
             return lector;
         }
 

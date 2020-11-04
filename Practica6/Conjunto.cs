@@ -20,15 +20,15 @@ namespace Practica6
 
         public void Agregar(IComparable comparable){
             
-            if(conjunto.Count == 0)
+            if (!Pertenece(comparable))
+                conjunto.Add(comparable);
+                
+            if(conjunto.Count == 1)
                 if(ordenInicio != null)
                     ordenInicio.Ejecutar();
             
             if (ordenLlegaAlumno != null)
                 ordenLlegaAlumno.Ejecutar(comparable);
-
-            if (!Pertenece(comparable))
-                conjunto.Add(comparable);
 
             if (conjunto.Count == 40)
                 if(ordenAulaLlena != null)

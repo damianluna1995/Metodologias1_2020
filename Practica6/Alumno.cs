@@ -27,7 +27,23 @@ namespace Practica6
         public int getCalificacion(){
         	return this.calificacion;
         }
+
+        public void setNombre(string n){
+            this.nombre = n;
+        }
+
+        public void setDNI(int d){
+            this.dni = d;
+        }
+
+        public void setLegajo(int l){
+            this.legajo = l;
+        }
         
+        public void setPromedio(double p){
+            this.promedio = p;
+        }
+
         public void setCalificacion(int calif){
         	this.calificacion = calif;
         }
@@ -49,12 +65,12 @@ namespace Practica6
             + " " + this.promedio.ToString();
         }
         
-        public int responderPregunta(int pregunta){
+        public virtual int responderPregunta(int pregunta){
         	Random nroAzar = new Random();
         	return nroAzar.Next(1,3);
         }
         
-        public string mostrarCalificacion(){
+        public virtual string mostrarCalificacion(){
         	return this.getNombre() + " " + this.getCalificacion();
         }
 

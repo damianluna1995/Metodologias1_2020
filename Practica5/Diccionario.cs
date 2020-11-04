@@ -21,8 +21,8 @@ namespace Practica5
 
             claveValor = new ClaveValor(clave,valor);
 
-            if(!diccionario.Pertenece(clave))
-                diccionario.Agregar((IComparable)claveValor);
+            if(!diccionario.Pertenece(claveValor))
+                diccionario.Agregar(claveValor);
             else{
             	Console.WriteLine("Escriba nueva clave...");
             	int nuevaClave = int.Parse(Console.ReadLine());
@@ -91,15 +91,15 @@ namespace Practica5
         }
 
         public bool SosIgual(IComparable comparable){
-            return this.clave.SosIgual(comparable);
+            return this.valor.SosIgual(comparable);
         }
 
         public bool SosMenor(IComparable comparable){
-            return this.clave.SosMenor(comparable);
+            return this.valor.SosMenor(comparable);
         }
 
         public bool SosMayor(IComparable comparable){
-            return this.clave.SosMayor(comparable);
+            return this.valor.SosMayor(comparable);
         }
 
     }

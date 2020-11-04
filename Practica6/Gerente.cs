@@ -12,7 +12,7 @@ namespace Practica6
             for (int i = 0; i < mejores.Count; i++)
             {
                 Console.WriteLine("Nombre: " + mejores[i].getNombre() + " DNI: " + mejores[i].getDNI()
-                + " bonus: " + mejores[i].getBonus());
+                + " bonus: " + mejores[i].getBonus() + " monto: $" + mejores[i].getMonto());
             }
         }
 
@@ -25,7 +25,8 @@ namespace Practica6
         }
 
         public void Actualizar(IObservado observado){
-        	//double monto = ((Vendedor)observado).Venta();
+        	int monto = ((Vendedor)observado).getMonto();
+            this.Venta(monto,(Vendedor)observado);
         }
 
     }

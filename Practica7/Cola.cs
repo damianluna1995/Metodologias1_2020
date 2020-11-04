@@ -44,7 +44,7 @@ namespace Practica7
 
             cola.Add(comparable);
             
-            if(cola.Count == 0)
+            if(cola.Count == 1)
                 if(ordenInicio != null)
                     ordenInicio.Ejecutar();
             

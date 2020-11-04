@@ -2,7 +2,7 @@ using System;
 
 namespace Practica7
 {
-    class IteradorDiccionario : Iterador
+    public class IteradorDiccionario : Iterador
     {
         Conjunto elementos;
         int indice = 0;
@@ -24,7 +24,7 @@ namespace Practica7
         }
 
         public IComparable actual(){
-            return elementos.getConjunto()[indice];
+            return ((ClaveValor)elementos.getConjunto()[indice]).getVal();
         }
 
     }

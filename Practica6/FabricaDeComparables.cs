@@ -14,13 +14,19 @@ namespace Practica6
                     fabrica = new FabricaDeNumero();
                     break;
                 case 2:
-                    fabrica = new FabricaDeAlumno();
+                    fabrica = new FabricaDeVendedor();
                     break;
                 case 3:
-                    fabrica = new FabricaDeVendedor();
+                    fabrica = new FabricaDeAlumno();
                     break;
                 case 4:
                     fabrica = new FabricaDeAME();
+                    break;
+                case 5:
+                    fabrica = new FabricaDeAlumnoProxy();
+                    break;
+                case 6:
+                    fabrica = new FabricaDeAlumnoComposite();
                     break;
             }
             return fabrica.crearComparable();
@@ -36,13 +42,19 @@ namespace Practica6
                     fabrica = new FabricaDeNumero();
                     break;
                 case 2:
-                    fabrica = new FabricaDeAlumno();
+                    fabrica = new FabricaDeVendedor();
                     break;
                 case 3:
-                    fabrica = new FabricaDeVendedor();
+                    fabrica = new FabricaDeAlumno();
                     break;
                 case 4:
                     fabrica = new FabricaDeAME();
+                    break;
+                case 5:
+                    fabrica = new FabricaDeAlumnoProxy();
+                    break;
+                case 6:
+                    fabrica = new FabricaDeAlumnoComposite();
                     break;
             }
             return fabrica.crearAleatorio();
@@ -58,13 +70,19 @@ namespace Practica6
                     fabrica = new FabricaDeNumero();
                     break;
                 case 2:
-                    fabrica = new FabricaDeAlumno();
+                    fabrica = new FabricaDeVendedor();
                     break;
                 case 3:
-                    fabrica = new FabricaDeVendedor();
+                    fabrica = new FabricaDeAlumno();
                     break;
                 case 4:
                     fabrica = new FabricaDeAME();
+                    break;
+                case 5:
+                    fabrica = new FabricaDeAlumnoProxy();
+                    break;
+                case 6:
+                    fabrica = new FabricaDeAlumnoComposite();
                     break;
             }
             return fabrica.crearPorTeclado();

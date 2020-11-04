@@ -6,9 +6,9 @@ namespace Practica7
     {
         static void Main(string[] args)
         {
-            Teacher t = new Teacher();
-            IComparable a = FabricaDeAlumno.crearAleatorio(2);
-            Student s = new AdaptadorAlumno((Alumno)a);
+            Teacher t = new Teacher(); 
+            IComparable a = (AlumnoProxy)FabricaDeComparables.crearAleatorio(5); //opcion proxy
+            Student s = new AdaptadorAlumno((IAlumno)a);
             t.goToClass(s);
             t.teachingAClass();
 

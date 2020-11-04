@@ -1,8 +1,9 @@
 using System;
+using System.Collections.Generic;
 
 namespace Practica2
 {
-    class IteradorDiccionario : Iterador
+    public class IteradorDiccionario : Iterador
     {
         Conjunto elementos;
         int indice = 0;
@@ -24,7 +25,7 @@ namespace Practica2
         }
 
         public IComparable actual(){
-            return elementos.getConjunto()[indice];
+            return ((ClaveValor)elementos.getConjunto()[indice]).getVal();
         }
 
     }

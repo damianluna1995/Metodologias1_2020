@@ -1,0 +1,13 @@
+C:\Users\usuario\Desktop\MDP1\Practica6\bin\Debug\netcoreapp3.1\Practica6.exe
+C:\Users\usuario\Desktop\MDP1\Practica6\bin\Debug\netcoreapp3.1\Practica6.deps.json
+C:\Users\usuario\Desktop\MDP1\Practica6\bin\Debug\netcoreapp3.1\Practica6.runtimeconfig.json
+C:\Users\usuario\Desktop\MDP1\Practica6\bin\Debug\netcoreapp3.1\Practica6.runtimeconfig.dev.json
+C:\Users\usuario\Desktop\MDP1\Practica6\bin\Debug\netcoreapp3.1\Practica6.dll
+C:\Users\usuario\Desktop\MDP1\Practica6\bin\Debug\netcoreapp3.1\Practica6.pdb
+C:\Users\usuario\Desktop\MDP1\Practica6\obj\Debug\netcoreapp3.1\Practica6.csprojAssemblyReference.cache
+C:\Users\usuario\Desktop\MDP1\Practica6\obj\Debug\netcoreapp3.1\Practica6.AssemblyInfoInputs.cache
+C:\Users\usuario\Desktop\MDP1\Practica6\obj\Debug\netcoreapp3.1\Practica6.AssemblyInfo.cs
+C:\Users\usuario\Desktop\MDP1\Practica6\obj\Debug\netcoreapp3.1\Practica6.csproj.CoreCompileInputs.cache
+C:\Users\usuario\Desktop\MDP1\Practica6\obj\Debug\netcoreapp3.1\Practica6.dll
+C:\Users\usuario\Desktop\MDP1\Practica6\obj\Debug\netcoreapp3.1\Practica6.pdb
+C:\Users\usuario\Desktop\MDP1\Practica6\obj\Debug\netcoreapp3.1\Practica6.genruntimeconfig.cache

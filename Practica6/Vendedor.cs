@@ -7,6 +7,7 @@ namespace Practica6
     {
         private int sueldoBasico;
         private double bonus;
+        private int monto;
         List<IObservador> observadores = new List<IObservador>();
 
         public Vendedor(string n, int d, int s): base(n,d){
@@ -14,18 +15,37 @@ namespace Practica6
             bonus = 1;
         }
 
-        public double Venta(int monto){
-            //Console.WriteLine(monto);
+        public void Venta(int monto){
             this.Notificar();
-            return monto; 
+            this.monto = monto; 
         }
 
         public void aumentaBonus(){
             bonus *= 1.10;
         }
 
+        public int getSueldoBasico(){
+            return this.sueldoBasico;
+        }
+
+        public int getMonto(){
+            return this.monto;
+        }
+        
         public double getBonus(){
             return this.bonus;
+        }
+
+        public void setSueldoBasico(int sueldo){
+            this.sueldoBasico = sueldo;
+        }
+
+        public void setMonto(int monto){
+            this.monto = monto;
+        }
+
+        public void setBonus(int bonus){
+            this.bonus = bonus;
         }
         
         public new bool SosIgual(IComparable comparable){
@@ -60,8 +80,7 @@ namespace Practica6
         }
         
         public void Agregar(IObservador observador){
-        	foreach(IObservador obser in observadores)
-        		observadores.Add(obser);
+        	observadores.Add(observador);
         }
 
     }

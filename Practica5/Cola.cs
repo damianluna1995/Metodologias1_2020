@@ -40,11 +40,12 @@ namespace Practica5
             }
             return mayor;
         }
+        
         public void Agregar(IComparable comparable){
 
             cola.Add(comparable);
             
-            if(cola.Count == 0)
+            if(cola.Count == 1)
                 if(ordenInicio != null)
                     ordenInicio.Ejecutar();
             

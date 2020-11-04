@@ -23,7 +23,7 @@ namespace Practica5
             if (!Pertenece(comparable))
                 conjunto.Add(comparable);
                 
-            if(conjunto.Count == 0)
+            if(conjunto.Count == 1)
                 if(ordenInicio != null)
                     ordenInicio.Ejecutar();
             

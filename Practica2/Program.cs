@@ -4,7 +4,7 @@ namespace Practica2
 {
     class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
             //----- Ejercicio 1 -----
             /*Alumno a = new Alumno("qqq",123,456,9.0);
@@ -35,21 +35,22 @@ namespace Practica2
 
             //----- Ejercicio 8 -----
 
+            //Problemas con el diccionario
             IEstrategiaDeComparacion iedc = new EstrategiaPorLegajo();
             
-            Pila pila = new Pila();
-            Cola cola = new Cola();
-            Conjunto conjunto = new Conjunto();
-            //Diccionario diccionario = new Diccionario();
-            LlenarAlumnos(pila,iedc);
-            LlenarAlumnos(cola,iedc);
-            LlenarAlumnos(conjunto,iedc);
-            //LlenarAlumnos(diccionario,iedc);
-            ImprimirElementos(pila);
+            //Pila pila = new Pila();
+            //Cola cola = new Cola();
+            //Conjunto conjunto = new Conjunto();
+            Diccionario diccionario = new Diccionario();
+            //LlenarAlumnos(pila,iedc);
+            //LlenarAlumnos(cola,iedc);
+            //LlenarAlumnos(conjunto,iedc);
+            LlenarAlumnos(diccionario,iedc);
+            //ImprimirElementos(pila);
             Console.WriteLine("");
-            ImprimirElementos(cola);
+            //ImprimirElementos(cola);
             Console.WriteLine("");
-            ImprimirElementos(conjunto);
+            //ImprimirElementos(conjunto);
             //ImprimirElementos(diccionario);
 
             //----- Ejercicio 10 -----

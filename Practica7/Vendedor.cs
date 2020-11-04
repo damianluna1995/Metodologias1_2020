@@ -3,10 +3,11 @@ using System.Collections.Generic;
 
 namespace Practica7
 {
-    class Vendedor: Persona, IObservado
+    public class Vendedor: Persona, IObservado
     {
         private int sueldoBasico;
         private double bonus;
+        private int monto;
         List<IObservador> observadores = new List<IObservador>();
 
         public Vendedor(string n, int d, int s): base(n,d){
@@ -14,10 +15,9 @@ namespace Practica7
             bonus = 1;
         }
 
-        public double Venta(int monto){
-            //Console.WriteLine(monto);
+        public void Venta(int monto){
             this.Notificar();
-            return monto; 
+            this.monto = monto; 
         }
 
         public void aumentaBonus(){
@@ -32,12 +32,20 @@ namespace Practica7
             return this.bonus;
         }
 
+        public int getMonto(){
+            return this.monto;
+        }
+
         public void setSueldoBasico(int sueldo){
             this.sueldoBasico = sueldo;
         }
 
         public void setBonus(double bonus){
             this.bonus = bonus;
+        }
+        
+        public void setMonto(int monto){
+            this.monto = monto;
         }
         
         public new bool SosIgual(IComparable comparable){
@@ -72,8 +80,7 @@ namespace Practica7
         }
         
         public void Agregar(IObservador observador){
-        	foreach(IObservador obser in observadores)
-        		observadores.Add(obser);
+        	observadores.Add(observador);
         }
 
     }

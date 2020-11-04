@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Practica2
 {
-    class Conjunto: IColeccionable, Iterable
+    public class Conjunto: IColeccionable, Iterable
     {
         private List<IComparable> conjunto;
 

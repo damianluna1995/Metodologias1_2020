@@ -44,7 +44,6 @@ namespace Practica5
 			//----- Ejercicio 10 -----
 			Pila p = new Pila();
 			Aula a = new Aula();
-			a.Comenzar();
 			p.setOrdenInicio(new OrdenInicio(a));
 			p.setOrdenLlegaAlumno(new OrdenLlegaAlumno(a));
 			p.setOrdenAulaLlena(new OrdenAulaLlena(a));

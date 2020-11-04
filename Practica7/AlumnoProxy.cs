@@ -8,6 +8,7 @@ namespace Practica7
         int opcion;
         string nombre; 
         int dni; 
+        Manejador responsable;
         
         public AlumnoProxy(int opcion, string nombre, int dni){
             this.opcion = opcion;
@@ -56,13 +57,14 @@ namespace Practica7
         }
 
         public int responderPregunta(int pregunta){
+
             if (alumnoReal == null)
-                if(opcion == 2){
-                    GeneradorDeDatosAleatorios g = GeneradorDeDatosAleatorios.getInstance();
+                if(opcion == 3){
+                    GeneradorDeDatosAleatorios g = GeneradorDeDatosAleatorios.getInstance(responsable);
                     alumnoReal = new Alumno(nombre, dni, g.numeroAleatorio(1000), g.numeroAleatorio(10));
                 }
                 if(opcion == 4){
-                    GeneradorDeDatosAleatorios g = GeneradorDeDatosAleatorios.getInstance();
+                    GeneradorDeDatosAleatorios g = GeneradorDeDatosAleatorios.getInstance(responsable);
                     alumnoReal = new AlumnoMuyEstudioso(nombre, dni, g.numeroAleatorio(1000), g.numeroAleatorio(10));
                 }
 

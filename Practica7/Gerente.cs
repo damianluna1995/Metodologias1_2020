@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Practica7
 {
-    class Gerente: IObservador
+    public class Gerente: IObservador
     {
         List<Vendedor> mejores = new List<Vendedor>();
 
@@ -16,7 +16,7 @@ namespace Practica7
             for (int i = 0; i < mejores.Count; i++)
             {
                 Console.WriteLine("Nombre: " + mejores[i].getNombre() + " DNI: " + mejores[i].getDNI()
-                + " bonus: " + mejores[i].getBonus());
+                + " bonus: " + mejores[i].getBonus() + " monto: $" + mejores[i].getMonto());
             }
         }
 
@@ -29,7 +29,8 @@ namespace Practica7
         }
 
         public void Actualizar(IObservado observado){
-        	//double monto = ((Vendedor)observado).Venta();
+        	int monto = ((Vendedor)observado).getMonto();
+            this.Venta(monto,(Vendedor)observado);
         }
 
     }

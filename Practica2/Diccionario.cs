@@ -1,27 +1,28 @@
 using System;
+using System.Collections.Generic;
 
 namespace Practica2
 {
-    class Diccionario: IColeccionable, Iterable
+    public class Diccionario: IColeccionable, Iterable
     {
-        ClaveValor claveValor;
+        private ClaveValor claveValor;
         private Conjunto diccionario;
-        private int contador = 0;
+        private int contador = 1;
 
         public Diccionario(){
             diccionario = new Conjunto();
         }
 
-        public Conjunto GetConjunto(){
+        public Conjunto GetDiccionario(){
             return this.diccionario;
         }
 
-        public void agregar(IComparable clave, IComparable valor){
+        private void agregar(IComparable clave, IComparable valor){
 
             claveValor = new ClaveValor(clave,valor);
 
-            if(!diccionario.Pertenece(clave))
-                diccionario.Agregar((IComparable)claveValor);
+            if(!diccionario.Pertenece(claveValor))
+                diccionario.Agregar(claveValor);
             else{
             	Console.WriteLine("Escriba nueva clave...");
             	int nuevaClave = int.Parse(Console.ReadLine());
@@ -32,10 +33,9 @@ namespace Practica2
 
         public IComparable valorDe(IComparable clave){
 
-            for (int i = 0; i < diccionario.Cuantos(); i++)
+            for (int i = 0; i < GetDiccionario().Cuantos(); i++)
                 if(claveValor.SosIgual(clave))
                     return claveValor.getVal();
-            
             return null;
         }
 
@@ -89,16 +89,20 @@ namespace Practica2
             this.clave = comparable;
         }
 
+        public void setValor(IComparable comparable){
+            this.valor = comparable;
+        }
+
         public bool SosIgual(IComparable comparable){
-            return this.clave.SosIgual(comparable);
+            return this.valor.SosIgual(comparable);
         }
 
         public bool SosMenor(IComparable comparable){
-            return this.clave.SosMenor(comparable);
+            return this.valor.SosMenor(comparable);
         }
 
         public bool SosMayor(IComparable comparable){
-            return this.clave.SosMayor(comparable);
+            return this.valor.SosMayor(comparable);
         }
 
     }

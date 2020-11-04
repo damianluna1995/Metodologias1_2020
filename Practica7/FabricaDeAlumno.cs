@@ -3,8 +3,10 @@ using System;
 namespace Practica7
 {
     public class FabricaDeAlumno: FabricaDeComparables
-    {
-        Manejador responsable;
+    { 
+        public FabricaDeAlumno(Manejador responsable){
+            base.responsable = responsable;
+        }
 
         public override IComparable crearComparable(){
             
@@ -19,13 +21,6 @@ namespace Practica7
         }
 
         public override IComparable crearAleatorio(){
-            
-            /*GeneradorDeDatosAleatorios gdda = new GeneradorDeDatosAleatorios(responsable);
-            string nombre = gdda.stringAleatorio(5);
-            int dni = gdda.numeroAleatorio(100);
-            int legajo = gdda.numeroAleatorio(200);
-            double promedio = gdda.numeroAleatorio(10);
-            return new Alumno(nombre,dni,legajo,promedio);*/
 
             string nombre = responsable.stringAleatorio(5);
             int dni = responsable.numeroAleatorio(1000);
@@ -37,13 +32,6 @@ namespace Practica7
         }
 
         public override IComparable crearPorTeclado(){
-            
-            /*LectorDeDatos ldd = new LectorDeDatos();
-            string nombre = ldd.stringPorTeclado();
-            int dni = ldd.numeroPorTeclado();
-            int legajo = ldd.numeroPorTeclado();
-            double promedio = ldd.doublePorTeclado();
-            return new Alumno(nombre,dni,legajo,promedio);*/
 
             string nombre = responsable.stringPorTeclado();
             int dni = responsable.numeroPorTeclado();

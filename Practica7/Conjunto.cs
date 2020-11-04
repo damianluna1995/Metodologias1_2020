@@ -3,9 +3,12 @@ using System.Collections.Generic;
 
 namespace Practica7
 {
-    class Conjunto: IColeccionable, Iterable
+    public class Conjunto: IColeccionable, Iterable, IOrdenable
     {
         private List<IComparable> conjunto;
+        IOrdenEnAula1 ordenInicio = null;
+        IOrdenEnAula1 ordenAulaLlena = null;
+        IOrdenEnAula2 ordenLlegaAlumno = null;
 
         public Conjunto(){
             conjunto = new List<IComparable>();
@@ -17,7 +20,18 @@ namespace Practica7
 
         public void Agregar(IComparable comparable){
             if (!Pertenece(comparable))
-                conjunto.Add(comparable);    
+                conjunto.Add(comparable);
+
+            if(conjunto.Count == 1)
+                if(ordenInicio != null)
+                    ordenInicio.Ejecutar();
+            
+            if (ordenLlegaAlumno != null)
+                ordenLlegaAlumno.Ejecutar(comparable);
+
+            if (conjunto.Count == 40)
+                if(ordenAulaLlena != null)
+                    ordenAulaLlena.Ejecutar();     
         }
 
         public bool Pertenece(IComparable elemento){
@@ -56,6 +70,18 @@ namespace Practica7
         
         public Iterador crearIterador(){
         	return new IteradorConjunto(conjunto);
+        }
+
+        public void setOrdenInicio(IOrdenEnAula1 orden){
+            ordenInicio = orden;
+        }
+
+        public void setOrdenAulaLlena(IOrdenEnAula1 orden){
+            ordenAulaLlena = orden;
+        }
+        
+        public void setOrdenLlegaAlumno(IOrdenEnAula2 orden){
+            ordenLlegaAlumno = orden;
         }
 
     }

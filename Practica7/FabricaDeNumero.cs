@@ -4,7 +4,10 @@ namespace Practica7
 {
     public class FabricaDeNumero: FabricaDeComparables
     {
-        Manejador responsable;
+ 
+        public FabricaDeNumero(Manejador responsable){
+            base.responsable = responsable;
+        }
 
         public override IComparable crearComparable(){
             
@@ -15,10 +18,6 @@ namespace Practica7
         }
 
         public override IComparable crearAleatorio(){
-            
-            /*GeneradorDeDatosAleatorios gdda = new GeneradorDeDatosAleatorios();
-            int numero = gdda.numeroAleatorio(50); 
-            return new Numero(numero);*/
 
             int numero = responsable.numeroAleatorio(1000);
             return new Numero(numero);
@@ -26,9 +25,6 @@ namespace Practica7
         }
 
         public override IComparable crearPorTeclado(){
-
-            /*LectorDeDatos ldd = new LectorDeDatos();
-            return new Numero(ldd.numeroPorTeclado());*/
 
             int numero = responsable.numeroPorTeclado();
             return new Numero(numero);

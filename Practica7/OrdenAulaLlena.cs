@@ -2,7 +2,7 @@ using System;
 
 namespace Practica7
 {
-    class OrdenAulaLlena: IOrdenEnAula1
+    public class OrdenAulaLlena: IOrdenEnAula1
     {
         Aula aula;
 

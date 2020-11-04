@@ -7,18 +7,18 @@ namespace Practica3
 		public static void Main(string[] args)
 		{
 			//----- Ejercicio 9 -----
-			IColeccionable cola = new Cola();
 			//Opcion 1, crea Numeros. Opcion 2, crea Alumnos. Opcion 3, crea Vendedores
+			/*IColeccionable cola = new Cola();
 			Llenar(cola,2);
-			Informar(cola,2);
+			Informar(cola,2);*/
 			
 			//----- Ejercicio 14 -----
-            /*Cola vendedores = new Cola();
+            Cola vendedores = new Cola();
             Gerente gerente = new Gerente();
-            Llenar(vendedores,3);            //Opcion 3 es para crear Vendedores
-            //hacer que gerente sea observador de todos los vendedores
+			//Opcion 3 es para crear Vendedores
+            llenarVendedores(vendedores,gerente,3);            
             jornadaDeVentas(vendedores);
-            gerente.Cerrar();*/
+            gerente.Cerrar();
             
             
 			Console.WriteLine("Pulse una tecla para continuar...");
@@ -56,19 +56,31 @@ namespace Practica3
 		//----- Ejercicio 13 -----
 		public static void jornadaDeVentas(Iterable vendedores){
 			
-			int cantVeces = 0;
 			Iterador iterador = vendedores.crearIterador();
 			Random nroAzar = new Random();
 			
-			while(cantVeces < 20){
-				iterador.primero();
-				while(!iterador.fin()){
-					IComparable vendedor = iterador.actual();
-					int monto = nroAzar.Next(1,10000);
-					((Vendedor)vendedor).Venta(monto);
-					iterador.siguiente();
-				}
-				cantVeces++;
+			iterador.primero();
+			while(!iterador.fin()){
+				IComparable vendedor = iterador.actual();
+				int monto = nroAzar.Next(1000,10000);
+				((Vendedor)vendedor).Venta(monto);
+
+				iterador.siguiente();
+			}
+			
+		}
+
+		public static void llenarVendedores(IColeccionable coleccionable, Gerente gerente, int opcion) {
+			
+			int cantVeces = 0;
+			
+			while (cantVeces < 20){
+				Vendedor vendedor = (Vendedor)FabricaDeVendedor.crearAleatorio(opcion);
+				//Mediante el método Agregar de la clase Vendedor, un gerente es observador de todos los vendedores
+				vendedor.Agregar(gerente);
+				coleccionable.Agregar(vendedor);
+
+				cantVeces ++;
 			}
 		}
 		

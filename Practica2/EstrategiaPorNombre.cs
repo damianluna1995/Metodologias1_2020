@@ -2,7 +2,7 @@ using System;
 
 namespace Practica2
 {
-    class EstrategiaPorNombre: EstrategiaDeComparacionAbstracta
+    public class EstrategiaPorNombre: EstrategiaDeComparacionAbstracta
     {   
         public override bool SosIgual(IComparable comparable1, IComparable comparable2){
             return ((Alumno)comparable1).getNombre().CompareTo(((Alumno)comparable2).getNombre()) == 0;

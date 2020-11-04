@@ -3,12 +3,20 @@ using System.Collections.Generic;
 
 namespace Practica6
 {
-    public abstract class Decorador: IAlumno{
-        
+    public abstract class Decorador: IAlumno
+    {    
         private IAlumno adicional;
 
         public Decorador(IAlumno a){
             this.adicional = a;
+        }
+
+        public string getNombre(){
+            return adicional.getNombre();
+        }
+
+         public int getDNI(){
+            return adicional.getDNI();
         }
 
         public int getLegajo(){
@@ -17,6 +25,22 @@ namespace Practica6
 
         public double getPromedio(){
             return adicional.getPromedio();
+        }
+
+        public void setNombre(string n){
+            adicional.setNombre(n);
+        }
+
+        public void setDNI(int d){ 
+            adicional.setDNI(d);
+        }
+
+        public void setLegajo(int l){
+            adicional.setLegajo(l);
+        }
+
+        public void setPromedio(double p){
+            adicional.setPromedio(p);
         }
 
         public int getCalificacion(){
@@ -31,8 +55,20 @@ namespace Practica6
             return adicional.responderPregunta(pregunta);
         }
 
-        public string mostrarCalificacion(){
+        public virtual string mostrarCalificacion(){
             return adicional.mostrarCalificacion();
+        }
+
+        public bool SosIgual(IComparable comparable){
+            return adicional.SosIgual(comparable);
+        }
+
+        public bool SosMenor(IComparable comparable){
+            return adicional.SosMenor(comparable);
+        }        
+
+        public bool SosMayor(IComparable comparable){
+            return adicional.SosMayor(comparable);
         }
 
     }
@@ -44,7 +80,7 @@ namespace Practica6
 
         public DecNotaEnLetras(IAlumno a): base(a){}
 
-        public new string mostrarCalificacion(){
+        override public string mostrarCalificacion(){
 
             string califDecorada = base.mostrarCalificacion();
 
@@ -92,7 +128,7 @@ namespace Practica6
     {
         public DecNotaConLegajo(IAlumno a): base(a){}
 
-        public new string mostrarCalificacion(){
+        override public string mostrarCalificacion(){
 
             string califDecorada = base.mostrarCalificacion();
             califDecorada = califDecorada + " " + base.getLegajo();
@@ -105,7 +141,7 @@ namespace Practica6
     {
         public DecCondicionMateria(IAlumno a): base(a){}
 
-        public new string mostrarCalificacion(){
+        override public string mostrarCalificacion(){
             
             string califDecorada = base.mostrarCalificacion();
 
@@ -122,15 +158,15 @@ namespace Practica6
         }
     }
 
-    public class DecNotaEnReacuadro : Decorador
+    public class DecNotaEnRecuadro : Decorador
     {
-        public DecNotaEnReacuadro(IAlumno a): base(a){}
+        public DecNotaEnRecuadro(IAlumno a): base(a){}
 
-        public new string mostrarCalificacion(){
+        override public string mostrarCalificacion(){
 
-            string califDecorada = "**************************************\n" + 
-                                   "**" + base.mostrarCalificacion() + "**\n" +
-                                   "**************************************"; 
+            string califDecorada = "******************************************\n" + 
+                                   "**  " + base.mostrarCalificacion() + "  **\n" +
+                                   "******************************************"; 
             return califDecorada;
         }
     }

@@ -20,18 +20,16 @@ namespace Practica7
 	public class LectorDeArchivos: Manejador
 	{
 		// El alumno deberá agregar la ruta correspondiente a su equipo donde haya guardado el archvo con los datos
-		private const string ruta_archivo = @"C:\Users\usuario\Desktop\MDP1\Practica7";
+		private const string ruta_archivo = @"C:\Users\usuario\Desktop\MDP1\Practica7\datos.txt";
 		// --------------------------------------------------------------------------------------------------------
 		
 		private StreamReader lector_de_archivos;
 		private static LectorDeArchivos lector = null;
 		
-		public LectorDeArchivos(Manejador siguiente):base(siguiente){
+		private LectorDeArchivos(Manejador siguiente): base(siguiente){
 			lector_de_archivos = new StreamReader(ruta_archivo);
 		}
 
-		private LectorDeArchivos(){}
-		
 		override public double numeroDesdeArchivo(double max){
 			string linea = lector_de_archivos.ReadLine();
 			return Double.Parse(linea.Substring(0, linea.IndexOf('\t'))) * max;
@@ -44,9 +42,9 @@ namespace Practica7
 			return linea.Substring(0, cant);
 		}
 
-		public static LectorDeArchivos getInstance(){
+		public static LectorDeArchivos getInstance(Manejador responsable){
 			if(lector == null)
-				lector = new LectorDeArchivos();
+				lector = new LectorDeArchivos(responsable);
 			return lector;
 		}
 

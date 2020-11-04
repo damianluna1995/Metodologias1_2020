@@ -16,12 +16,12 @@ namespace Practica6
             return this.diccionario;
         }
 
-        public void agregar(IComparable clave, IComparable valor){
+        private void agregar(IComparable clave, IComparable valor){
 
             claveValor = new ClaveValor(clave,valor);
 
-            if(!diccionario.Pertenece(clave))
-                diccionario.Agregar((IComparable)claveValor);
+            if(!diccionario.Pertenece(claveValor))
+                diccionario.Agregar(claveValor);
             else{
             	Console.WriteLine("Escriba nueva clave...");
             	int nuevaClave = int.Parse(Console.ReadLine());
@@ -90,15 +90,15 @@ namespace Practica6
         }
 
         public bool SosIgual(IComparable comparable){
-            return this.clave.SosIgual(comparable);
+            return this.valor.SosIgual(comparable);
         }
 
         public bool SosMenor(IComparable comparable){
-            return this.clave.SosMenor(comparable);
+            return this.valor.SosMenor(comparable);
         }
 
         public bool SosMayor(IComparable comparable){
-            return this.clave.SosMayor(comparable);
+            return this.valor.SosMayor(comparable);
         }
 
     }

@@ -2,7 +2,7 @@ using System;
 
 namespace Practica2
 {
-    class EstrategiaPorLegajo: EstrategiaDeComparacionAbstracta
+    public class EstrategiaPorLegajo: EstrategiaDeComparacionAbstracta
     {   
         public override bool SosIgual(IComparable comparable1, IComparable comparable2){
             return ((Alumno)comparable1).getLegajo() == ((Alumno)comparable2).getLegajo();

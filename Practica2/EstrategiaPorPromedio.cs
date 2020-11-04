@@ -2,7 +2,7 @@ using System;
 
 namespace Practica2
 {
-    class EstrategiaPorPromedio: EstrategiaDeComparacionAbstracta
+    public class EstrategiaPorPromedio: EstrategiaDeComparacionAbstracta
     {   
         public override bool SosIgual(IComparable comparable1, IComparable comparable2){
             return ((Alumno)comparable1).getPromedio() == ((Alumno)comparable2).getPromedio();

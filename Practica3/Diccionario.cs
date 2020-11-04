@@ -2,9 +2,9 @@ using System;
 
 namespace Practica3
 {
-    class Diccionario: IColeccionable, Iterable
+    public class Diccionario: IColeccionable, Iterable
     {
-        ClaveValor claveValor;
+        private ClaveValor claveValor;
         private Conjunto diccionario;
         private int contador = 0;
 
@@ -12,7 +12,7 @@ namespace Practica3
             diccionario = new Conjunto();
         }
 
-        public Conjunto GetConjunto(){
+        public Conjunto GetDiccionario(){
             return this.diccionario;
         }
 
@@ -20,8 +20,8 @@ namespace Practica3
 
             claveValor = new ClaveValor(clave,valor);
 
-            if(!diccionario.Pertenece(clave))
-                diccionario.Agregar((IComparable)claveValor);
+            if(!diccionario.Pertenece(claveValor))
+                diccionario.Agregar(claveValor);
             else{
             	Console.WriteLine("Escriba nueva clave...");
             	int nuevaClave = int.Parse(Console.ReadLine());
@@ -90,15 +90,15 @@ namespace Practica3
         }
 
         public bool SosIgual(IComparable comparable){
-            return this.clave.SosIgual(comparable);
+            return this.valor.SosIgual(comparable);
         }
 
         public bool SosMenor(IComparable comparable){
-            return this.clave.SosMenor(comparable);
+            return this.valor.SosMenor(comparable);
         }
 
         public bool SosMayor(IComparable comparable){
-            return this.clave.SosMayor(comparable);
+            return this.valor.SosMayor(comparable);
         }
 
     }

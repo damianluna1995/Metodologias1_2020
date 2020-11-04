@@ -42,14 +42,14 @@ namespace Practica6
         
         public void Agregar(IComparable comparable){
 
-            if(pila.Count == 0)
+            pila.Add(comparable);
+            
+            if(pila.Count == 1)
                 if(ordenInicio != null)
                     ordenInicio.Ejecutar();
             
             if (ordenLlegaAlumno != null)
                 ordenLlegaAlumno.Ejecutar(comparable);
-
-            pila.Add(comparable);
 
             if (pila.Count == 40)
                 if(ordenAulaLlena != null)

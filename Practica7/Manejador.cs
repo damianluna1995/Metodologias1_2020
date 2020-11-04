@@ -4,13 +4,15 @@ namespace Practica7
 {
     public abstract class Manejador
     {
-        private Manejador siguiente;
+        protected Manejador siguiente = null;
 
-        public Manejador(Manejador s){
-            this.siguiente = s;
+        protected Manejador(Manejador siguiente){
+            this.siguiente = siguiente;
         }
 
-        public Manejador(){}
+        public void setManejador(Manejador manejador){
+            this.siguiente = manejador;
+        }
 
         //Métodos de la clase Lector De Archivos
         public virtual double numeroDesdeArchivo(double max){

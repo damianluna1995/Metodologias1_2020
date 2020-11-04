@@ -2,13 +2,11 @@ using System;
 
 namespace Practica7
 {
-    class LectorDeDatos: Manejador
+    public class LectorDeDatos: Manejador
     {
         static private LectorDeDatos lector = null;
 
-        public LectorDeDatos(Manejador siguiente): base(siguiente){}
-
-        private LectorDeDatos(){}
+        private LectorDeDatos(Manejador siguiente): base(siguiente){}
 
         override public int numeroPorTeclado(){
             Console.WriteLine("Ingrese numero: ");
@@ -28,9 +26,9 @@ namespace Practica7
             return cadena;
         }
 
-        public static LectorDeDatos getInstance(){
+        public static LectorDeDatos getInstance(Manejador responsable){
             if(lector == null)
-                lector = new LectorDeDatos();
+                lector = new LectorDeDatos(responsable);
             return lector;
         }
 

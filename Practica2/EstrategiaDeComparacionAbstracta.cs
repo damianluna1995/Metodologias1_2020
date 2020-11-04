@@ -2,7 +2,7 @@ using System;
 
 namespace Practica2
 {
-    abstract class EstrategiaDeComparacionAbstracta: IEstrategiaDeComparacion{
+    public abstract class EstrategiaDeComparacionAbstracta: IEstrategiaDeComparacion{
         
         public abstract bool SosIgual(IComparable comparable1, IComparable comparable2);
         public abstract bool SosMenor(IComparable comparable1, IComparable comparable2);

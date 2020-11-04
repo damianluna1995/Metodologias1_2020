@@ -9,7 +9,7 @@ namespace Practica6
         public int numeroAleatorio(int rangoMaximo)
         {
             Random nroRandom = new Random();
-            int numero = nroRandom.Next(0,rangoMaximo);
+            int numero = nroRandom.Next(1,rangoMaximo);
             return numero;
         }
 
