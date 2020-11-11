@@ -11,7 +11,7 @@ namespace Practica7
         
         public override IComparable crearComparable(){
             
-            //Crea un Alumno desde archivo
+            //Crea un AlumnoMuyEstudioso desde archivo
             string nombre = responsable.stringDesdeArchivo(5);
             int dni = (int)responsable.numeroDesdeArchivo(1000);
             int legajo = (int)responsable.numeroDesdeArchivo(2000);

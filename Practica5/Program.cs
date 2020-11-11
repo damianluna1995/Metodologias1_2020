@@ -57,10 +57,11 @@ namespace Practica5
         //----- Ejercicio 6, Practica 3-----
 		public static void Llenar(IColeccionable coleccionable, int opcion){
 
+			GeneradorDeDatosAleatorios g = new GeneradorDeDatosAleatorios();	
 			int cantVeces = 0;
 			
 			while (cantVeces < 20){
-				IComparable alumno = FabricaDeComparables.crearAleatorio(opcion);
+				IAlumno alumno = new AlumnoProxy(opcion, g.stringAleatorio(5), g.numeroAleatorio(1000));
 				coleccionable.Agregar(alumno);
 				cantVeces ++;
 			}

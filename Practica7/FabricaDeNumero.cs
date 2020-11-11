@@ -11,7 +11,7 @@ namespace Practica7
 
         public override IComparable crearComparable(){
             
-            //Creo un comparable desde archivo
+            //Creo un Numero desde archivo
             int numero = (int)responsable.numeroDesdeArchivo(1000);
             return new Numero(numero);
 

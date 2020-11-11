@@ -4,19 +4,18 @@ namespace Practica7
 {
     public class FabricaDeAlumnoProxy: FabricaDeComparables
     {
+        Random opcionAzar = new Random();
 
         public FabricaDeAlumnoProxy(Manejador responsable){
             base.responsable = responsable;
         }
 
+        //Crea un AlumnoProxy desde archivo
         public override IComparable crearComparable(){
             
-            //Crea un AlumnoProxy por defecto
-            Random opcionAzar = new Random();
-
             int opcion = opcionAzar.Next(3,5);
-            string nombre = "qwerty";
-            int dni = 1234;
+            string nombre = responsable.stringDesdeArchivo(5);
+            int dni = responsable.numeroAleatorio(1000); 
 
             return new AlumnoProxy(opcion,nombre,dni);
 
@@ -24,23 +23,18 @@ namespace Practica7
 
         public override IComparable crearAleatorio(){
             
-            GeneradorDeDatosAleatorios g = GeneradorDeDatosAleatorios.getInstance(responsable);
-            Random opcionAzar = new Random();
-            
             int opcion = opcionAzar.Next(3,5);
-            string nombre = g.stringAleatorio(5);
-            int dni = g.numeroAleatorio(1000);
+            string nombre = responsable.stringAleatorio(5);
+            int dni = responsable.numeroAleatorio(1000);
 
             return new AlumnoProxy(opcion,nombre,dni);
         }
 
         public override IComparable crearPorTeclado(){
             
-            LectorDeDatos ldd = LectorDeDatos.getInstance(responsable);
-
-            int opcion = ldd.numeroPorTeclado();
-            string nombre = ldd.stringPorTeclado();
-            int dni = ldd.numeroPorTeclado();
+            int opcion = responsable.numeroPorTeclado();
+            string nombre = responsable.stringPorTeclado();
+            int dni = responsable.numeroPorTeclado();
 
             return new AlumnoProxy(opcion,nombre,dni);
 

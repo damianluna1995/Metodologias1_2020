@@ -75,7 +75,7 @@ namespace Practica3
 			int cantVeces = 0;
 			
 			while (cantVeces < 20){
-				Vendedor vendedor = (Vendedor)FabricaDeVendedor.crearAleatorio(opcion);
+				Vendedor vendedor = (Vendedor)FabricaDeComparables.crearAleatorio(opcion);
 				//Mediante el método Agregar de la clase Vendedor, un gerente es observador de todos los vendedores
 				vendedor.Agregar(gerente);
 				coleccionable.Agregar(vendedor);
