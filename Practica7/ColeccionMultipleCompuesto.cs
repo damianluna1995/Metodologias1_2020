@@ -37,7 +37,7 @@ namespace Practica7
 
         public IComparable Maximo(){
             
-            IComparable max = coleccionCompuesta[0].Minimo();
+            IComparable max = coleccionCompuesta[0].Maximo();
             foreach (var item in coleccionCompuesta)
             {
                 if (item.Maximo().SosMayor(max))
